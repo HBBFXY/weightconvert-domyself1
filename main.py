@@ -1,9 +1,11 @@
-Weight = input("请输入带单位的重量值: ")
-if Weight[-2:] == "kg":  
-    pd = (eval(Weight[0:-2])) * 2.2046
-    print("对应的英制重量为{:.3f}磅".format(pd))
-elif Weight[-2:] == "pd":
-    kg = (eval(Weight[0:-2])) / 2.2046
-    print("对应的公制重量为{:.3f}公斤".format(kg))
+weight_str = input()
+unit = weight_str[-2:]
+value = float(weight_str[:-2])
+if unit == "kg":
+    pounds = value * 2.2046
+    print(f"对应的英制重量为{pounds:.3f}磅")
+elif unit == "pd":
+    kilograms = value * 0.4535
+    print(f"对应的公制重量为{kilograms:.3f}公斤")
 else:
     print("输入格式错误")
